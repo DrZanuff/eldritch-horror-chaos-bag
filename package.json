@@ -18,6 +18,8 @@
     "@mui/styled-engine-sc": "^5.11.0",
     "eslint-plugin-jest-dom": "^4.0.3",
     "eslint-plugin-testing-library": "^5.9.1",
+    "framer-motion": "^8.5.4",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recoil": "^0.7.6",

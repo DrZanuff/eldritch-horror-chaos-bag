@@ -1,9 +1,14 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { RecoilRoot } from 'recoil'
 import { MainPage } from './MainPage'
 
 describe('Render main elements at the page', () => {
-  render(<MainPage />)
+  render(
+    <RecoilRoot>
+      <MainPage />
+    </RecoilRoot>
+  )
   const user = userEvent.setup()
 
   it('should render all elements', () => {

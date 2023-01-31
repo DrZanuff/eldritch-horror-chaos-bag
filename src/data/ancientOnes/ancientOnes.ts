@@ -315,7 +315,7 @@ const nyarlathotep: AncientOneType = {
   ]
 }
 
-export const AncientOneList: AncientOneType[] = [
+export const ancientOneList: AncientOneType[] = [
   azathoth,
   cthulhu,
   shubNiggurath,

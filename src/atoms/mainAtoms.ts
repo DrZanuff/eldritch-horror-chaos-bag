@@ -37,3 +37,13 @@ export const closeModalSceneAtom = atom<CloseModalSceneInterfaceAtom>({
     closeModal: () => {}
   }
 })
+
+import { AncientOneType } from '../data/ancientOnes/ancientOnes.types'
+
+export const currentAncientOne = atom<AncientOneType>({
+  key: 'currentAncientOne',
+  default: {
+    name: '',
+    stages: []
+  } as AncientOneType
+})

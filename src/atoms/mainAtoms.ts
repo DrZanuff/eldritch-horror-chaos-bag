@@ -38,7 +38,7 @@ export const closeModalSceneAtom = atom<CloseModalSceneInterfaceAtom>({
   }
 })
 
-import { AncientOneType } from '../data/ancientOnes/ancientOnes.types'
+import type { AncientOneType } from '../data/ancientOnes/ancientOnes.types'
 
 export const currentAncientOne = atom<AncientOneType>({
   key: 'currentAncientOne',
@@ -46,4 +46,17 @@ export const currentAncientOne = atom<AncientOneType>({
     name: '',
     stages: []
   } as AncientOneType
+})
+
+import type { PlayerCountReference } from '../data/playerCountReference/playerCountReference.types'
+
+export const currentPlayersNumber = atom<PlayerCountReference>({
+  key: 'currentPlayersNumber',
+  default: {
+    clues: 0,
+    name: '',
+    players: 0,
+    portals: 0,
+    surges: 0
+  }
 })

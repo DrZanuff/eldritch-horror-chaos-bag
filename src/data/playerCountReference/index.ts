@@ -1,3 +1,3 @@
-import { playerCountReference } from './playerCountReference'
+import { playerCountReferenceList } from './playerCountReference'
 
-export { playerCountReference }
+export { playerCountReferenceList }

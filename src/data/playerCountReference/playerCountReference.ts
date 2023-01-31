@@ -64,7 +64,7 @@ const eightPlayers: PlayerCountReference = {
   surges: 3
 }
 
-export const playerCountReference: PlayerCountReference[] = [
+export const playerCountReferenceList: PlayerCountReference[] = [
   onePlayer,
   twoPlayers,
   threePlayers,

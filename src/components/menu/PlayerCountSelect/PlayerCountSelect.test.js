@@ -29,7 +29,7 @@ describe('Number of Players select should work', () => {
     })
   })
 
-  it('should be able to select number of players from the list', async () => {
+  it('should be able to select number of players from the list and display number of player tokens', async () => {
     render(
       <RecoilRoot>
         <PlayerCountSelect />
@@ -49,6 +49,16 @@ describe('Number of Players select should work', () => {
       const playerSelect = screen.getByRole('button', { name: playerCount.name })
 
       expect(playerSelect.textContent).toBe(playerCount.name)
+
+      const player = screen.getByTestId('players')
+      const clues = screen.getByTestId('clues')
+      const portals = screen.getByTestId('portals')
+      const surges = screen.getByTestId('surges')
+
+      expect(player.textContent).toBe(String(playerCount.players))
+      expect(clues.textContent).toBe(String(playerCount.clues))
+      expect(portals.textContent).toBe(String(playerCount.portals))
+      expect(surges.textContent).toBe(String(playerCount.surges))
     })
   })
 })

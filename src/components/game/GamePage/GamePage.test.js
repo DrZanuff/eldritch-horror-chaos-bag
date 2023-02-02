@@ -1,9 +1,14 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { RecoilRoot } from 'recoil'
 import { GamePage } from './GamePage'
 
 describe('Render game page elements', () => {
-  render(<GamePage />)
+  render(
+    <RecoilRoot>
+      <GamePage />
+    </RecoilRoot>
+  )
   const user = userEvent.setup()
 
   it('should render all elements', () => {

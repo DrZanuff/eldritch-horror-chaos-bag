@@ -44,7 +44,13 @@ export const currentAncientOne = atom<AncientOneType>({
   key: 'currentAncientOne',
   default: {
     name: '',
-    stages: []
+    stages: [
+      {
+        yellow: 0,
+        green: 0,
+        blue: 0
+      }
+    ]
   } as AncientOneType
 })
 

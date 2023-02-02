@@ -1,14 +1,16 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { Button } from '@mui/material'
-import { Stages } from '../../Stages'
+import { StageSteps } from '../../StageSteps'
 import { TokensTaken } from '../TokensTaken'
-import { useResetRecoilState, useSetRecoilState } from 'recoil'
-import { gameState } from '../../../atoms/mainAtoms'
+import { useSetRecoilState, useRecoilValue } from 'recoil'
+import { currentAncientOne, gameState, currentStage } from '../../../atoms/mainAtoms'
 import type { GamePageProps } from './GamePage.types'
 import * as S from './GamePage.styles'
 
 export function GamePage({ value }: GamePageProps) {
   const changePageToMenu = useSetRecoilState(gameState)
+  const stage = useRecoilValue(currentStage)
+  const ancientOne = useRecoilValue(currentAncientOne)
 
   const handleBackToMenu = useCallback(() => {
     changePageToMenu('menu')
@@ -21,7 +23,7 @@ export function GamePage({ value }: GamePageProps) {
       </Button>
       <S.Row>
         <Button variant="contained">Get Token</Button>
-        <Stages />
+        <StageSteps stages={[ancientOne.stages[stage]]} />
       </S.Row>
       <h2>Description</h2>
       <p role="article">{'currentTokenDescription'}</p>

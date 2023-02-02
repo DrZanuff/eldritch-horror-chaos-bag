@@ -2,13 +2,14 @@ import { ancientOneList } from '../../../data/ancientOnes'
 import { FormControl, Select, InputLabel, MenuItem } from '@mui/material'
 import { currentAncientOne } from '../../../atoms/mainAtoms'
 import { useRecoilState } from 'recoil'
+import { StageSteps } from '../../StageSteps'
 import type { SelectChangeEvent } from './AncientOneSelect.types'
 import * as S from './AncientOneSelect.styles'
 
 export function AncientOneSelect() {
   const label = 'Select an Ancient One'
 
-  const [ancientOnes, setAncientOne] = useRecoilState(currentAncientOne)
+  const [ancientOne, setAncientOne] = useRecoilState(currentAncientOne)
 
   const handleAncientOneChange = (event: SelectChangeEvent) => {
     const ancientOne = ancientOneList.find((ao) => ao.name == event.target.value)
@@ -23,7 +24,7 @@ export function AncientOneSelect() {
           labelId="select-ao"
           id="select-ao"
           label={label}
-          value={ancientOnes.name}
+          value={ancientOne.name}
           onChange={handleAncientOneChange}>
           {ancientOneList.map((ao) => (
             <MenuItem key={ao.name} value={ao.name}>
@@ -32,6 +33,7 @@ export function AncientOneSelect() {
           ))}
         </Select>
       </FormControl>
+      <StageSteps stages={ancientOne.stages} />
     </S.AncientOneSelectContainer>
   )
 }

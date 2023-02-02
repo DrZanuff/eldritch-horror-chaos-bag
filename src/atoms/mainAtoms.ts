@@ -60,3 +60,8 @@ export const currentPlayersNumber = atom<PlayerCountReference>({
     surges: 0
   }
 })
+
+export const currentStage = atom<number>({
+  key: 'currentStage',
+  default: 0
+})

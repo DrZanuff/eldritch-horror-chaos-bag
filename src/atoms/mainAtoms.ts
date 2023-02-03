@@ -43,7 +43,7 @@ import type { AncientOneType } from '../data/ancientOnes/ancientOnes.types'
 export const currentAncientOne = atom<AncientOneType>({
   key: 'currentAncientOne',
   default: {
-    name: '',
+    name: 'none',
     stages: [
       {
         yellow: 0,
@@ -60,7 +60,7 @@ export const currentPlayersNumber = atom<PlayerCountReference>({
   key: 'currentPlayersNumber',
   default: {
     clues: 0,
-    name: '',
+    name: 'none',
     players: 0,
     portals: 0,
     surges: 0
@@ -70,4 +70,11 @@ export const currentPlayersNumber = atom<PlayerCountReference>({
 export const currentStage = atom<number>({
   key: 'currentStage',
   default: 0
+})
+
+import { Token } from '../data/tokens/token.types'
+
+export const tokenBagContext = atom<Token[]>({
+  key: 'tokenBagContext',
+  default: []
 })

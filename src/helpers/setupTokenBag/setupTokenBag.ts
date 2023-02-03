@@ -51,7 +51,7 @@ export function setUpTokenBag(
   playerCount: PlayerCountReference,
   ancientOne: AncientOneType
 ): Token[] {
-  if (stage > 3) {
+  if (stage > 2) {
     return setBaseTokens(playerCount, 1, 1, 0)
   }
 

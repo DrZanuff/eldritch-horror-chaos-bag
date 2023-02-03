@@ -11,10 +11,9 @@ import {
   currentPlayersNumber
 } from '../../../atoms/mainAtoms'
 import { setUpTokenBag } from '../../../helpers/setupTokenBag'
-import { filterTakenTokens } from '../../../helpers/filterTakenTokens'
+import { checkForMythosToken } from '../../../helpers/checkForMythosToken'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
-import { shuffle } from 'lodash'
 
 export function GamePage() {
   const changePageToMenu = useSetRecoilState(gameState)
@@ -33,56 +32,23 @@ export function GamePage() {
     setTokensTaken([])
   }, [stage, playerCount, ancientOne])
 
-  const checkMythos = useCallback(() => {
-    if (lastToken?.name === 'Yellow Mythos') {
-      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, [
-        'Omen',
-        'Player Reckoning',
-        'Game Reckoning',
-        'Gate'
-      ])
-      setTokensTaken(leftOutTokens)
-      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
-      return
-    }
-
-    if (lastToken?.name === 'Green Mythos') {
-      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, [
-        'Omen',
-        'Surge',
-        'Clue'
-      ])
-
-      setTokensTaken(leftOutTokens)
-      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
-      return
-    }
-
-    if (lastToken?.name === 'Blue Mythos') {
-      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, ['Clue'])
-
-      setTokensTaken(leftOutTokens)
-      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
-    }
-  }, [lastToken])
-
   const getToken = useCallback(() => {
-    const newTokenBag = [...tokenBag]
+    const tempTokenBag = [...tokenBag]
+    const tempTokensTake = [...tokensTaken]
 
-    const tokenTaken = newTokenBag.pop()
+    const lasTokenTaken = tempTokenBag.pop()
+    tempTokensTake.unshift(lasTokenTaken)
 
-    setTokensTaken((prev) => {
-      if (tokenTaken) {
-        prev.unshift(tokenTaken)
-      }
+    const { tokensBag: newTokensBag, tokensTaken: newTokensTaken } = checkForMythosToken(
+      lasTokenTaken,
+      tempTokenBag,
+      tempTokensTake
+    )
 
-      return prev
-    })
-
-    setTokenBag(() => newTokenBag)
-    setLastToken(tokenTaken)
-    checkMythos()
-  }, [tokenBag, tokensTaken, checkMythos])
+    setTokensTaken(newTokensTaken)
+    setTokenBag(newTokensBag)
+    setLastToken(lasTokenTaken)
+  }, [tokenBag, tokensTaken])
 
   console.log('DBG:', { tokenBag, lastToken, tokensTaken })
 
@@ -108,7 +74,11 @@ export function GamePage() {
             </Button>
           </>
         )}
-        <StageSteps stages={[ancientOne.stages[stage]]} />
+        {stage < 2 ? (
+          <StageSteps stages={[ancientOne.stages[stage]]} />
+        ) : (
+          <span>Endeless Stage!</span>
+        )}
       </S.Row>
       <div>{lastToken && <h2>{lastToken.name}</h2>}</div>
       <h3>Description</h3>

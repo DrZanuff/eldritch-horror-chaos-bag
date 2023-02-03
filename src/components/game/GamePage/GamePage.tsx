@@ -10,9 +10,11 @@ import {
   tokenBagContext,
   currentPlayersNumber
 } from '../../../atoms/mainAtoms'
-import { setUpTokenBag } from '../../../helpers'
+import { setUpTokenBag } from '../../../helpers/setupTokenBag'
+import { filterTakenTokens } from '../../../helpers/filterTakenTokens'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
+import { shuffle } from 'lodash'
 
 export function GamePage() {
   const changePageToMenu = useSetRecoilState(gameState)
@@ -22,7 +24,7 @@ export function GamePage() {
   const playerCount = useRecoilValue(currentPlayersNumber)
 
   const [tokensTaken, setTokensTaken] = useState<Token[]>([])
-  const [lastToken, setLastToken] = useState<Token>()
+  const [lastToken, setLastToken] = useState<Token>({} as Token)
 
   const resetTokenBag = useCallback(() => {
     const newStage = stage + 1
@@ -30,6 +32,39 @@ export function GamePage() {
     setTokenBag(() => setUpTokenBag(newStage, playerCount, ancientOne))
     setTokensTaken([])
   }, [stage, playerCount, ancientOne])
+
+  const checkMythos = useCallback(() => {
+    if (lastToken?.name === 'Yellow Mythos') {
+      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, [
+        'Omen',
+        'Player Reckoning',
+        'Game Reckoning',
+        'Gate'
+      ])
+      setTokensTaken(leftOutTokens)
+      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
+      return
+    }
+
+    if (lastToken?.name === 'Green Mythos') {
+      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, [
+        'Omen',
+        'Surge',
+        'Clue'
+      ])
+
+      setTokensTaken(leftOutTokens)
+      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
+      return
+    }
+
+    if (lastToken?.name === 'Blue Mythos') {
+      const { backToBagTokens, leftOutTokens } = filterTakenTokens(tokensTaken, ['Clue'])
+
+      setTokensTaken(leftOutTokens)
+      setTokenBag((prev) => shuffle([...prev, ...backToBagTokens]))
+    }
+  }, [lastToken])
 
   const getToken = useCallback(() => {
     const newTokenBag = [...tokenBag]
@@ -46,7 +81,8 @@ export function GamePage() {
 
     setTokenBag(() => newTokenBag)
     setLastToken(tokenTaken)
-  }, [tokenBag, tokensTaken])
+    checkMythos()
+  }, [tokenBag, tokensTaken, checkMythos])
 
   console.log('DBG:', { tokenBag, lastToken, tokensTaken })
 

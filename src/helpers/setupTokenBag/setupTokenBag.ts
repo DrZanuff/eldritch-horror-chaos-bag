@@ -8,7 +8,7 @@ import {
   playerReckoningToken,
   surgeToken,
   yellowToken
-} from '../data/tokens'
+} from '../../data/tokens'
 import { shuffle } from 'lodash'
 import { AncientOneType, PlayerCountReference, Token } from './setupTokenBag.types'
 

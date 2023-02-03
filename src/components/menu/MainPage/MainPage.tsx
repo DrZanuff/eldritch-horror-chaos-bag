@@ -10,7 +10,7 @@ import {
   gameState,
   tokenBagContext
 } from '../../../atoms/mainAtoms'
-import { setUpTokenBag } from '../../../helpers'
+import { setUpTokenBag } from '../../../helpers/setupTokenBag'
 import * as S from './MainPage.styles'
 
 export function MainPage() {

@@ -1,5 +1,16 @@
+export type TokenNames =
+  | 'Omen'
+  | 'Clue'
+  | 'Gate'
+  | 'Surge'
+  | 'Game Reckoning'
+  | 'Player Reckoning'
+  | 'Yellow Mythos'
+  | 'Green Mythos'
+  | 'Blue Mythos'
+
 export interface Token {
-  name: string
+  name: TokenNames
   description: string
   icon: string
 }

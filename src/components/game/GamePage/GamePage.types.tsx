@@ -1,3 +1,3 @@
-export interface GamePageProps {
-  value?: string
-}
+import type { Token } from '../../../helpers/setupTokenBag.types'
+
+export { Token }

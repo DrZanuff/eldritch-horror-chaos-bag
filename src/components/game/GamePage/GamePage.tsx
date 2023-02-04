@@ -14,6 +14,7 @@ import { setUpTokenBag } from '../../../helpers/setupTokenBag'
 import { checkForMythosToken } from '../../../helpers/checkForMythosToken'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
+import { TokenDescription } from '../TokenDescription'
 
 export function GamePage() {
   const changePageToMenu = useSetRecoilState(gameState)
@@ -37,7 +38,7 @@ export function GamePage() {
     const tempTokensTake = [...tokensTaken]
 
     const lasTokenTaken = tempTokenBag.pop()
-    tempTokensTake.unshift(lasTokenTaken)
+    lasTokenTaken && tempTokensTake.unshift(lasTokenTaken)
 
     const { tokensBag: newTokensBag, tokensTaken: newTokensTaken } = checkForMythosToken(
       lasTokenTaken,
@@ -47,7 +48,7 @@ export function GamePage() {
 
     setTokensTaken(newTokensTaken)
     setTokenBag(newTokensBag)
-    setLastToken(lasTokenTaken)
+    lasTokenTaken && setLastToken(lasTokenTaken)
   }, [tokenBag, tokensTaken])
 
   console.log('DBG:', { tokenBag, lastToken, tokensTaken })
@@ -80,14 +81,8 @@ export function GamePage() {
           <span>Endeless Stage!</span>
         )}
       </S.Row>
-      <div>{lastToken && <h2>{lastToken.name}</h2>}</div>
-      <h3>Description</h3>
-      <div>
-        {lastToken && (
-          <p role="article" dangerouslySetInnerHTML={{ __html: lastToken.description }}></p>
-        )}
-      </div>
-      <TokensTaken />
+      <TokenDescription token={lastToken} />
+      <TokensTaken tokens={tokensTaken} />
     </S.GamePageContainer>
   )
 }

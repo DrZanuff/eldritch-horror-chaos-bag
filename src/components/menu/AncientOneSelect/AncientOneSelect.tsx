@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil'
 import { StageSteps } from '../../StageSteps'
 import type { SelectChangeEvent } from './AncientOneSelect.types'
 import * as S from './AncientOneSelect.styles'
+import { PlayerCountSelect } from '../PlayerCountSelect'
 
 export function AncientOneSelect() {
   const label = 'Select an Ancient One'
@@ -18,24 +19,30 @@ export function AncientOneSelect() {
 
   return (
     <S.AncientOneSelectContainer data-testid="ao-select">
-      <FormControl fullWidth>
-        <InputLabel id="select-ao">{label}</InputLabel>
-        <Select
-          labelId="select-ao"
-          id="select-ao"
-          label={label}
-          value={ancientOne.name}
-          onChange={handleAncientOneChange}>
-          {ancientOneList.map((ao) => (
-            <MenuItem key={ao.name} value={ao.name}>
-              {ao.name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      {ancientOne.name === 'none' ? null : (
-        <StageSteps stages={ancientOne.stages} displayCurrentSate={false} />
-      )}
+      <S.FieldsConstainer>
+        <FormControl fullWidth>
+          <InputLabel id="select-ao">{label}</InputLabel>
+          <Select
+            labelId="select-ao"
+            id="select-ao"
+            label={label}
+            value={ancientOne.name}
+            onChange={handleAncientOneChange}>
+            {ancientOneList.map((ao) => (
+              <MenuItem key={ao.name} value={ao.name}>
+                {ao.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <PlayerCountSelect />
+      </S.FieldsConstainer>
+
+      <S.StageBox>
+        {ancientOne.name === 'none' ? null : (
+          <StageSteps stages={ancientOne.stages} displayCurrentSate={false} />
+        )}
+      </S.StageBox>
     </S.AncientOneSelectContainer>
   )
 }

@@ -1,12 +1,11 @@
-import { Button } from '@mui/material'
-import { AboutModal } from '../AboutModal'
-import { openModalSceneAtom } from '../../../atoms/mainAtoms'
-import { useRecoilValue } from 'recoil'
-import type { AboutProps } from './About.types'
+// import { Button } from '@mui/material'
+// import { AboutModal } from '../AboutModal'
+// import { openModalSceneAtom } from '../../../atoms/mainAtoms'
+// import { useRecoilValue } from 'recoil'
 import * as S from './About.styles'
 
-export function About({ value }: AboutProps) {
-  const { openModal } = useRecoilValue(openModalSceneAtom)
+export function About() {
+  // const { openModal } = useRecoilValue(openModalSceneAtom)
 
   return (
     <S.AboutContainer data-testid="about">
@@ -15,9 +14,9 @@ export function About({ value }: AboutProps) {
         target="_blank">
         How to play
       </a>
-      <Button variant="contained" color="warning" onClick={() => openModal(<AboutModal />)}>
+      {/* <Button variant="contained" color="warning" onClick={() => openModal(<AboutModal />)}>
         About
-      </Button>
+      </Button> */}
       <span>
         Developed by{' '}
         <a href="https://github.com/DrZanuff" target="_blank">

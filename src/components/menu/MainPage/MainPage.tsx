@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
 import { AncientOneSelect } from '../AncientOneSelect'
-import { PlayerCountSelect } from '../PlayerCountSelect'
 import { About } from '../About'
 import { Button } from '@mui/material'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
@@ -9,11 +8,13 @@ import {
   currentPlayersNumber,
   currentStage,
   gameState,
+  openModalSceneAtom,
   tokenBagContext
 } from '../../../atoms/mainAtoms'
 import { setUpTokenBag } from '../../../helpers/setupTokenBag'
 import { loadGameStatus } from '../../../helpers/loadGameStatus'
 import { Confirmation } from '../Confirmation'
+import { AboutModal } from '../AboutModal'
 import * as S from './MainPage.styles'
 import { ModalComponent } from '../../_modal/ModalComponent'
 
@@ -23,6 +24,7 @@ export function MainPage() {
   const playerCount = useRecoilValue(currentPlayersNumber)
   const ancientOne = useRecoilValue(currentAncientOne)
   const setStage = useSetRecoilState(currentStage)
+  const { openModal } = useRecoilValue(openModalSceneAtom)
 
   const [isContinueDisabled, setIsContinueDisabled] = useState(true)
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false)
@@ -60,15 +62,38 @@ export function MainPage() {
 
   return (
     <S.MainPageContainer data-testid="menu-page">
-      <h1>Eldritch Horror Chaos Bag</h1>
+      <S.TitleContainer>
+        <h1>Eldritch Horror</h1>
+        <h1>Chaos Bag</h1>
+      </S.TitleContainer>
       <AncientOneSelect />
-      <PlayerCountSelect />
-      <Button variant="contained" disabled={isSetUpNotReady} onClick={handleStartGameButton}>
-        Start New Game
-      </Button>
-      <Button variant="contained" disabled={isContinueDisabled} onClick={handleContinueGame}>
-        Continue
-      </Button>
+      <S.ButtonsContainer>
+        <Button
+          variant="contained"
+          color="error"
+          disabled={isSetUpNotReady}
+          onClick={handleStartGameButton}>
+          Start New Game
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          disabled={isContinueDisabled}
+          onClick={handleContinueGame}>
+          Continue
+        </Button>
+
+        <Button
+          variant="contained"
+          color="warning"
+          sx={{
+            width: '100px',
+            margin: '0 auto'
+          }}
+          onClick={() => openModal(<AboutModal />)}>
+          About
+        </Button>
+      </S.ButtonsContainer>
       <About />
       {displayConfirmationModal && (
         <ModalComponent

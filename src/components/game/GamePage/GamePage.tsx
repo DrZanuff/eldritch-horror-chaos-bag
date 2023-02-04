@@ -1,8 +1,8 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { Button } from '@mui/material'
 import { StageSteps } from '../../StageSteps'
 import { TokensTaken } from '../TokensTaken'
-import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil'
+import { useSetRecoilState, useRecoilState } from 'recoil'
 import {
   currentAncientOne,
   gameState,
@@ -12,6 +12,8 @@ import {
 } from '../../../atoms/mainAtoms'
 import { setUpTokenBag } from '../../../helpers/setupTokenBag'
 import { checkForMythosToken } from '../../../helpers/checkForMythosToken'
+import { saveGameStatus } from '../../../helpers/saveGameStatus'
+import { loadGameStatus } from '../../../helpers/loadGameStatus'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
 import { TokenDescription } from '../TokenDescription'
@@ -20,8 +22,8 @@ export function GamePage() {
   const changePageToMenu = useSetRecoilState(gameState)
   const [stage, setStage] = useRecoilState(currentStage)
   const [tokenBag, setTokenBag] = useRecoilState(tokenBagContext)
-  const ancientOne = useRecoilValue(currentAncientOne)
-  const playerCount = useRecoilValue(currentPlayersNumber)
+  const [ancientOne, setAncientOne] = useRecoilState(currentAncientOne)
+  const [playerCount, setPlayerCount] = useRecoilState(currentPlayersNumber)
 
   const [tokensTaken, setTokensTaken] = useState<Token[]>([])
   const [lastToken, setLastToken] = useState<Token>({} as Token)
@@ -46,12 +48,31 @@ export function GamePage() {
       tempTokensTake
     )
 
-    setTokensTaken(newTokensTaken)
-    setTokenBag(newTokensBag)
-    lasTokenTaken && setLastToken(lasTokenTaken)
-  }, [tokenBag, tokensTaken])
+    setTokensTaken(() => newTokensTaken)
+    setTokenBag(() => newTokensBag)
+    lasTokenTaken && setLastToken(() => lasTokenTaken)
 
-  console.log('DBG:', { tokenBag, lastToken, tokensTaken })
+    saveGameStatus({
+      ancientOne,
+      lastToken,
+      playerCount,
+      stage,
+      tokenBag,
+      tokensTaken
+    })
+  }, [tokenBag, tokensTaken, ancientOne, playerCount, stage, lastToken])
+
+  useEffect(() => {
+    const save = loadGameStatus()
+    if (!!save) {
+      setStage(save?.stage || 0)
+      setAncientOne(save.ancientOne)
+      setPlayerCount(save.playerCount)
+      save.lastToken && setLastToken(save.lastToken)
+      setTokenBag(save.tokenBag)
+      setTokensTaken(save.tokensTaken)
+    }
+  }, [])
 
   const handleBackToMenu = useCallback(() => {
     changePageToMenu('menu')
@@ -75,8 +96,8 @@ export function GamePage() {
             </Button>
           </>
         )}
-        {stage < 2 ? (
-          <StageSteps stages={[ancientOne.stages[stage]]} />
+        {stage < 3 ? (
+          <StageSteps stages={[ancientOne.stages[stage]]} displayCurrentSate currentStage={stage} />
         ) : (
           <span>Endeless Stage!</span>
         )}

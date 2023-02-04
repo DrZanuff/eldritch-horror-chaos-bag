@@ -3,7 +3,7 @@ import type { MythosColors } from './StageSteps.types'
 
 export const StageStepsContainer = styled.div`
   display: flex;
-  background-color: beige;
+  background-color: #292929;
   padding: 10px;
   border-radius: 20px;
   flex-direction: column;

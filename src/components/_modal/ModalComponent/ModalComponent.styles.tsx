@@ -45,7 +45,7 @@ interface ModalComponentProps {
 }
 
 export const ModalComponent = styled.div<ModalComponentProps>`
-  padding: 15px 40px 15px 15px;
+  padding: 15px 15px 15px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;

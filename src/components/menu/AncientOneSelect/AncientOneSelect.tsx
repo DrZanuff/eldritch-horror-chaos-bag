@@ -33,7 +33,9 @@ export function AncientOneSelect() {
           ))}
         </Select>
       </FormControl>
-      <StageSteps stages={ancientOne.stages} />
+      {ancientOne.name === 'none' ? null : (
+        <StageSteps stages={ancientOne.stages} displayCurrentSate={false} />
+      )}
     </S.AncientOneSelectContainer>
   )
 }

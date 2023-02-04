@@ -7,7 +7,6 @@ export function checkForMythosToken(
   tokensBag: Token[],
   tokensTaken: Token[]
 ) {
-  console.log('DBG: lastToken', { lastToken })
   if (!lastToken) {
     return { tokensBag, tokensTaken }
   }

@@ -1,13 +1,17 @@
 import type { StageStepsProps } from './StageSteps.types'
 import * as S from './StageSteps.styles'
 
-export function StageSteps({ stages }: StageStepsProps) {
+export function StageSteps({ stages, currentStage = 0, displayCurrentSate }: StageStepsProps) {
   return (
     <S.StageStepsContainer data-testid="stages">
       <h3>Stages</h3>
       {stages.map((stage, idx) => (
         <S.StepContainer key={idx}>
-          <span>Step {idx + 1}</span>
+          {displayCurrentSate === true ? (
+            <span>Stage {currentStage + 1}</span>
+          ) : (
+            <span>Stage {idx + 1}</span>
+          )}
           <S.Step mythosColors="yellow" data-testid={`yellow-step-${idx + 1}`}>
             {stage.yellow}
           </S.Step>

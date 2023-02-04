@@ -72,7 +72,7 @@ export const currentStage = atom<number>({
   default: 0
 })
 
-import { Token } from '../data/tokens/token.types'
+import type { Token } from '../data/tokens/token.types'
 
 export const tokenBagContext = atom<Token[]>({
   key: 'tokenBagContext',

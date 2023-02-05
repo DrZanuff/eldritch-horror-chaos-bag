@@ -6,7 +6,7 @@ export const MainPageContainer = styled.div`
   align-items: center;
   gap: 20px;
   height: 100%;
-  border: 4px solid #36200c;
+  box-shadow: 0 0 0 3px #36200c;
   padding: 10px;
   border-radius: 15px;
   margin-top: 20px;

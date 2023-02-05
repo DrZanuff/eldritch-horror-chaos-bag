@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const AncientOneSelectContainer = styled.div`
   display: flex;
   gap: 20px;
+  width: 100%;
 
   @media (max-width: 1024px) {
     flex-direction: column;

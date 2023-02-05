@@ -1,5 +1,6 @@
 import { useCallback, useState, useEffect } from 'react'
 import { Button } from '@mui/material'
+import { TouchApp, RestartAlt } from '@mui/icons-material'
 import { StageSteps } from '../../StageSteps'
 import { TokensTaken } from '../TokensTaken'
 import { useSetRecoilState, useRecoilState } from 'recoil'
@@ -80,27 +81,48 @@ export function GamePage() {
 
   return (
     <S.GamePageContainer data-testid="game-page">
-      <Button variant="contained" color="error" onClick={handleBackToMenu}>
-        Quit
-      </Button>
+      <S.TopContainer>
+        <Button variant="contained" color="error" onClick={handleBackToMenu}>
+          Back to Menu
+        </Button>
+      </S.TopContainer>
       <S.Row>
-        {tokenBag.length > 0 ? (
-          <Button variant="contained" onClick={getToken}>
-            Get Token
-          </Button>
-        ) : (
-          <>
-            <span>Bag is empty.. Advance Omen by one (1)</span>
-            <Button variant="contained" onClick={resetTokenBag}>
+        <S.ButtonWraper>
+          {tokenBag.length > 0 ? (
+            <Button
+              variant="contained"
+              onClick={getToken}
+              size="large"
+              endIcon={<TouchApp fontSize={'large'} />}
+              sx={{ width: '70%' }}>
+              Get Token
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              color="warning"
+              onClick={resetTokenBag}
+              size="large"
+              endIcon={<RestartAlt fontSize={'large'} />}
+              sx={{ width: '70%' }}>
               Reset Token Bag
             </Button>
-          </>
-        )}
-        {stage < 3 ? (
-          <StageSteps stages={[ancientOne.stages[stage]]} displayCurrentSate currentStage={stage} />
-        ) : (
-          <span>Endeless Stage!</span>
-        )}
+          )}
+          <S.MessageDisplayContainer>
+            {tokenBag.length === 0 && <span>Bag is empty.. Advance Omen by one (1)</span>}
+          </S.MessageDisplayContainer>
+        </S.ButtonWraper>
+        <S.StageBox>
+          {stage < 3 ? (
+            <StageSteps
+              stages={[ancientOne.stages[stage]]}
+              displayCurrentSate
+              currentStage={stage}
+            />
+          ) : (
+            <span>Endeless Stage!</span>
+          )}
+        </S.StageBox>
       </S.Row>
       <TokenDescription token={lastToken} />
       <TokensTaken tokens={tokensTaken} />

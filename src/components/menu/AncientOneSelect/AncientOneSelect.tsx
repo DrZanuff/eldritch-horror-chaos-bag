@@ -26,6 +26,7 @@ export function AncientOneSelect() {
             labelId="select-ao"
             id="select-ao"
             label={label}
+            sx={{ width: '100%' }}
             value={ancientOne.name}
             onChange={handleAncientOneChange}>
             {ancientOneList.map((ao) => (

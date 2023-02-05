@@ -23,6 +23,12 @@ export const TokenContainer = styled.div<TolKenContainerProps>`
   border-radius: 50%;
   width: 50px;
   height: 50px;
+
+  @media (max-width: 1024px) {
+    width: 25px;
+    height: 25px;
+  }
+
   ${({ name }) => {
     function getColor(tokenName: TokenNames) {
       if (tokenName === 'Omen') return 'black'

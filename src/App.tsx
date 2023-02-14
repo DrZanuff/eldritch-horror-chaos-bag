@@ -11,7 +11,7 @@ function App() {
   return (
     <S.AppContainer>
       <S.Background>
-        <img src="/src/assets/background.jpg" alt="" />
+        <img src="/background.jpg" alt="" />
       </S.Background>
       {currentPage === 'menu' ? <MainPage /> : <GamePage />}
     </S.AppContainer>

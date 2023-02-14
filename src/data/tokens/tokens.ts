@@ -5,7 +5,7 @@ export const omenToken: Token = {
   description: `
     <span>Advance Omen by one (1)</span>
   `,
-  icon: '/src/assets/icons/Omen.png'
+  icon: '/icons/Omen.png'
 }
 
 export const clueToken: Token = {
@@ -21,7 +21,7 @@ export const clueToken: Token = {
       location)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Clue.png'
+  icon: '/icons/Clue.png'
 }
 
 export const gateToken: Token = {
@@ -31,7 +31,7 @@ export const gateToken: Token = {
       Spawn one (1) Gate <i>(and one monster, as per core rules)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Gate.png'
+  icon: '/icons/Gate.png'
 }
 
 export const surgeToken: Token = {
@@ -46,7 +46,7 @@ export const surgeToken: Token = {
       </i>
     </span>
   `,
-  icon: '/src/assets/icons/Surge.png'
+  icon: '/icons/Surge.png'
 }
 
 export const gameReckoningToken: Token = {
@@ -58,7 +58,7 @@ export const gameReckoningToken: Token = {
       <i>(monsters, AO, Mythos cards)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Game.png'
+  icon: '/icons/Game.png'
 }
 
 export const playerReckoningToken: Token = {
@@ -70,7 +70,7 @@ export const playerReckoningToken: Token = {
       token to the <i>(first non-Eliminated)</i> player on the left
     </span>
   `,
-  icon: '/src/assets/icons/Player.png'
+  icon: '/icons/Player.png'
 }
 
 export const yellowToken: Token = {
@@ -82,7 +82,7 @@ export const yellowToken: Token = {
       of the card <i>(Omen, Player and Non-player Reckoning & Gate)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Yellow.png'
+  icon: '/icons/Yellow.png'
 }
 
 export const greenToken: Token = {
@@ -94,7 +94,7 @@ export const greenToken: Token = {
       of the card <i>(Omen, Surge & Clue)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Green.png'
+  icon: '/icons/Green.png'
 }
 
 export const blueToken: Token = {
@@ -106,5 +106,5 @@ export const blueToken: Token = {
       of the card <i>(Clue)</i>
     </span>
   `,
-  icon: '/src/assets/icons/Blue.png'
+  icon: '/icons/Blue.png'
 }

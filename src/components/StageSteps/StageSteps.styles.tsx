@@ -12,6 +12,9 @@ export const StageStepsContainer = styled.div`
   > h3 {
     margin: 0px 0 10px;
     font-size: 20px;
+
+    font-family: 'Birmingham';
+    /* font-weight: bold; */
   }
 `
 export const StepContainer = styled.div`
@@ -25,6 +28,9 @@ export const StepContainer = styled.div`
     margin-top: 4px;
     text-align: right;
     width: 80px;
+
+    font-family: 'Birmingham';
+    font-style: italic;
   }
 `
 

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 const showAnimationContainer = keyframes`
   0% {  opacity: 0}
@@ -16,7 +16,7 @@ export const ModalComponentContainer = styled.div`
   background: none;
   z-index: 1002;
 
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -32,6 +32,8 @@ export const ModalComponentContainerBackground = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1001;
 
   background: #000000;
@@ -42,6 +44,7 @@ export const ModalComponentContainerBackground = styled.div`
 interface ModalComponentProps {
   width?: string
   height?: string
+  applySizeForMobile?: boolean
 }
 
 export const ModalComponent = styled.div<ModalComponentProps>`
@@ -61,8 +64,16 @@ export const ModalComponent = styled.div<ModalComponentProps>`
   border-radius: 9px;
 
   @media (max-width: 1024px) {
-    width: 90vw;
-    height: 90vh;
+    ${({ applySizeForMobile, width, height }) =>
+      applySizeForMobile === true
+        ? css`
+            width: ${() => (width ? width : '90vw')};
+            height: ${() => (height ? height : '90vh')};
+          `
+        : css`
+            width: 90vw;
+            height: 90vh;
+          `}
   }
 `
 export const ModalComponentContent = styled.div`

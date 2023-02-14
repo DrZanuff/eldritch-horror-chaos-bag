@@ -7,13 +7,14 @@ export function ModalComponent({
   handleCloseModalComponent,
   component,
   width,
-  height
+  height,
+  applySizeForMobile
 }: ModalComponentProps) {
   return (
     <>
       <S.ModalComponentContainerBackground />
       <S.ModalComponentContainer>
-        <S.ModalComponent width={width} height={height}>
+        <S.ModalComponent width={width} height={height} applySizeForMobile={applySizeForMobile}>
           <S.ModalComponentContent>{component}</S.ModalComponentContent>
           <IconButton
             sx={{ position: 'absolute', top: '0px', right: '0px' }}

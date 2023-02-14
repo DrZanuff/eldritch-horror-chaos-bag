@@ -61,40 +61,42 @@ export function MainPage() {
   const isSetUpNotReady = ancientOne.name === 'none' || playerCount.name === 'none'
 
   return (
-    <S.MainPageContainer data-testid="menu-page">
-      <S.TitleContainer>
-        <h1>Eldritch Horror</h1>
-        <h1>Chaos Bag</h1>
-      </S.TitleContainer>
-      <AncientOneSelect />
-      <S.ButtonsContainer>
-        <Button
-          variant="contained"
-          color="error"
-          disabled={isSetUpNotReady}
-          onClick={handleStartGameButton}>
-          Start New Game
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          disabled={isContinueDisabled}
-          onClick={handleContinueGame}>
-          Continue
-        </Button>
+    <>
+      <S.MainPageContainer data-testid="menu-page">
+        <S.TitleContainer>
+          <h1>Eldritch Horror</h1>
+          <h1>Chaos Bag</h1>
+        </S.TitleContainer>
+        <AncientOneSelect />
+        <S.ButtonsContainer>
+          <Button
+            variant="contained"
+            color="error"
+            disabled={isSetUpNotReady}
+            onClick={handleStartGameButton}>
+            Start New Game
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            disabled={isContinueDisabled}
+            onClick={handleContinueGame}>
+            Continue
+          </Button>
 
-        <Button
-          variant="contained"
-          color="warning"
-          sx={{
-            width: '100px',
-            margin: '0 auto'
-          }}
-          onClick={() => openModal(<AboutModal />)}>
-          About
-        </Button>
-      </S.ButtonsContainer>
-      <About />
+          <Button
+            variant="contained"
+            color="warning"
+            sx={{
+              width: '100px',
+              margin: '0 auto'
+            }}
+            onClick={() => openModal(<AboutModal />)}>
+            About
+          </Button>
+        </S.ButtonsContainer>
+        <About />
+      </S.MainPageContainer>
       {displayConfirmationModal && (
         <ModalComponent
           component={
@@ -106,8 +108,9 @@ export function MainPage() {
           handleCloseModalComponent={handleCloseConfirmationModal}
           width={'350px'}
           height={'180px'}
+          applySizeForMobile
         />
       )}
-    </S.MainPageContainer>
+    </>
   )
 }

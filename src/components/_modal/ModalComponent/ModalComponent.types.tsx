@@ -5,4 +5,5 @@ export interface ModalComponentProps {
   component: ReactElement
   width?: string
   height?: string
+  applySizeForMobile?: boolean
 }

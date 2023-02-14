@@ -4,12 +4,17 @@ import type { TokenNames } from './TokensTaken.types'
 export const TokensTakenContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
+
+  font-family: 'Birmingham';
+  font-weight: bold;
 `
 export const TokensList = styled.div`
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
-  max-height: 200px;
+  height: 125px;
+  max-height: 125px;
   overflow-y: auto;
 `
 interface TolKenContainerProps {
@@ -24,9 +29,21 @@ export const TokenContainer = styled.div<TolKenContainerProps>`
   width: 50px;
   height: 50px;
 
+  img {
+    object-fit: contain;
+    width: 50px;
+    height: 50px;
+  }
+
   @media (max-width: 1024px) {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
+
+    img {
+      object-fit: contain;
+      width: 35px;
+      height: 35px;
+    }
   }
 
   ${({ name }) => {

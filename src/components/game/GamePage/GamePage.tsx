@@ -104,7 +104,7 @@ export function GamePage() {
               onClick={resetTokenBag}
               size="large"
               endIcon={<RestartAlt fontSize={'large'} />}
-              sx={{ width: '70%' }}>
+              sx={{ width: '80%' }}>
               Reset Token Bag
             </Button>
           )}

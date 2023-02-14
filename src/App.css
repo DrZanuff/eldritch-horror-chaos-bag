@@ -1,15 +1,52 @@
 #root {
-  max-width: 600px;
+  /* max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   #root {
     padding: 5px;
     max-width: 100%;
   }
+} */
+
+@font-face {
+  font-family: 'Birmingham';
+  src: local('Birmingham'), url(/src/assets/arkham-horror/Birmingham.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Birmingham';
+  src: local('Birmingham'), url(/src/assets/arkham-horror/BirminghamBold.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Birmingham';
+  src: local('Birmingham'), url(/src/assets/arkham-horror/BirminghamTitling.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Birmingham';
+  src: local('Birmingham'),
+    url(/src/assets/arkham-horror/BirminghamTitlingBold.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: bold;
+  font-style: italic;
 }

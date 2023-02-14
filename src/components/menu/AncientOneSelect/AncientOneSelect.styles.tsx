@@ -21,8 +21,8 @@ export const StageBox = styled.div`
   display: flex;
   min-width: 220px;
   height: 180px;
-  border: 4px solid burlywood;
-  background-color: #fee296;
+  border: 2px solid white;
+  background-color: #694f825c;
   display: flex;
   justify-content: center;
   align-items: center;

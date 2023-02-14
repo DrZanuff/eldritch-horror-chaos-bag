@@ -6,10 +6,22 @@ export const MainPageContainer = styled.div`
   align-items: center;
   gap: 20px;
   height: 100%;
-  box-shadow: 0 0 0 3px #36200c;
-  padding: 10px;
+  box-sizing: border-box;
   border-radius: 15px;
-  margin-top: 20px;
+
+  background-color: #1f1f1f8a;
+  backdrop-filter: blur(4px);
+
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+
+  @media (max-width: 1024px) {
+    padding: 5px;
+    max-width: 100%;
+    margin: 15px;
+  }
 `
 export const TitleContainer = styled.div`
   display: flex;
@@ -18,6 +30,9 @@ export const TitleContainer = styled.div`
 
   > h1 {
     margin: 0 0 20px;
+    text-transform: uppercase;
+    font-family: 'Birmingham';
+    font-weight: bold;
   }
 `
 export const ButtonsContainer = styled.div`

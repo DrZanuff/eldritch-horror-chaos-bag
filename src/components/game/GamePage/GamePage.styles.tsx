@@ -7,14 +7,20 @@ export const GamePageContainer = styled.div`
   width: 100%;
   gap: 10px;
   height: 100%;
-  box-shadow: 0 0 0 3px #36200c;
-  padding: 10px;
   border-radius: 15px;
-  margin-top: 20px;
+  background-color: #1f1f1f8a;
+  backdrop-filter: blur(4px);
+
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 
   @media (max-width: 1024px) {
-    width: 100%;
-    padding: 0;
+    padding: 5px;
+    max-width: 100%;
+    margin: 15px;
   }
 `
 
@@ -53,8 +59,8 @@ export const StageBox = styled.div`
   display: flex;
   min-width: 220px;
   height: 100px;
-  border: 4px solid burlywood;
-  background-color: #fee296;
+  border: 2px solid white;
+  background-color: #694f825c;
   display: flex;
   justify-content: center;
   align-items: center;

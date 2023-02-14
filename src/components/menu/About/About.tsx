@@ -1,7 +1,4 @@
-// import { Button } from '@mui/material'
-// import { AboutModal } from '../AboutModal'
-// import { openModalSceneAtom } from '../../../atoms/mainAtoms'
-// import { useRecoilValue } from 'recoil'
+import { Link } from '@mui/material'
 import * as S from './About.styles'
 
 export function About() {
@@ -9,19 +6,20 @@ export function About() {
 
   return (
     <S.AboutContainer data-testid="about">
-      <a
+      <Link
+        underline="always"
         href="https://boardgamegeek.com/thread/2890913/mythos-phase-chaos-bag-variant"
         target="_blank">
         How to play
-      </a>
+      </Link>
       {/* <Button variant="contained" color="warning" onClick={() => openModal(<AboutModal />)}>
         About
       </Button> */}
       <span>
         Developed by{' '}
-        <a href="https://github.com/DrZanuff" target="_blank">
+        <Link underline="always" href="https://github.com/DrZanuff" target="_blank">
           DrZanuff
-        </a>
+        </Link>
       </span>
     </S.AboutContainer>
   )

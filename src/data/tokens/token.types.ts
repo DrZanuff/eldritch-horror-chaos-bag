@@ -8,6 +8,7 @@ export type TokenNames =
   | 'Yellow Mythos'
   | 'Green Mythos'
   | 'Blue Mythos'
+  | 'Empty Bag'
 
 export interface Token {
   name: TokenNames

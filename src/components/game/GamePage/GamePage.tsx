@@ -15,6 +15,7 @@ import { setUpTokenBag } from '../../../helpers/setupTokenBag'
 import { checkForMythosToken } from '../../../helpers/checkForMythosToken'
 import { saveGameStatus } from '../../../helpers/saveGameStatus'
 import { loadGameStatus } from '../../../helpers/loadGameStatus'
+import { resetToken } from '../../../data/tokens/tokens'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
 import { TokenDescription } from '../TokenDescription'
@@ -34,6 +35,7 @@ export function GamePage() {
     setStage(() => newStage)
     setTokenBag(() => setUpTokenBag(newStage, playerCount, ancientOne))
     setTokensTaken([])
+    setLastToken(resetToken)
   }, [stage, playerCount, ancientOne])
 
   const getToken = useCallback(() => {
@@ -108,9 +110,6 @@ export function GamePage() {
               Reset Token Bag
             </Button>
           )}
-          <S.MessageDisplayContainer>
-            {tokenBag.length === 0 && <span>Bag is empty.. Advance Omen by one (1)</span>}
-          </S.MessageDisplayContainer>
         </S.ButtonWraper>
         <S.StageBox>
           {stage < 3 ? (
@@ -120,7 +119,7 @@ export function GamePage() {
               currentStage={stage}
             />
           ) : (
-            <span>Endeless Stage!</span>
+            <span>Endless Stage!</span>
           )}
         </S.StageBox>
       </S.Row>

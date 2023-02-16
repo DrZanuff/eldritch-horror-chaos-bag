@@ -108,3 +108,13 @@ export const blueToken: Token = {
   `,
   icon: '/icons/Blue.png'
 }
+
+export const resetToken: Token = {
+  name: 'Empty Bag',
+  description: `
+    <span>
+      The bag is empty, advance the omen by one(1)
+    </span>
+  `,
+  icon: '/icons/Omen.png'
+}

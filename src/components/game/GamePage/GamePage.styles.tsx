@@ -49,12 +49,6 @@ export const ButtonWraper = styled.div`
   width: 100%;
   align-items: center;
 `
-export const MessageDisplayContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  min-height: 50px;
-`
 export const StageBox = styled.div`
   display: flex;
   min-width: 220px;

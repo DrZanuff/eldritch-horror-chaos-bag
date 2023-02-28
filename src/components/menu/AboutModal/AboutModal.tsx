@@ -4,7 +4,6 @@ import {
   ThreadLink,
   PDFLink,
   ArkhamHorrorLink,
-  AppLink,
   FGGLink,
   WikiLink
 } from './component/Links'
@@ -42,10 +41,7 @@ export function AboutModal() {
         <p>
           Select an Ancient One from the list and the number of players then click start. Just click
           on the Get Token button and follow the effect description. The game auto saves, so if you
-          close the app you can resume to the game. You can access the tool on this link:
-          <br></br>
-          <br></br>
-          <AppLink />
+          close the app you can resume to the game.
         </p>
         <h2>Credits</h2>
         <p>

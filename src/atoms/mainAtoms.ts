@@ -24,13 +24,6 @@ export const currentModalSceneAtom = atom<CurrentModalSceneTypeAtom>({
   default: null
 })
 
-export const openModalSceneAtom = atom<OpenModalSceneInterfaceAtom>({
-  key: 'openModalSceneAtom',
-  default: {
-    openModal: () => {}
-  }
-})
-
 export const closeModalSceneAtom = atom<CloseModalSceneInterfaceAtom>({
   key: 'closeModalSceneAtom',
   default: {

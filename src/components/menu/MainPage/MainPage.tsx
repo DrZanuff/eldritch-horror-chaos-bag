@@ -8,7 +8,6 @@ import {
   currentPlayersNumber,
   currentStage,
   gameState,
-  openModalSceneAtom,
   tokenBagContext
 } from '../../../atoms/mainAtoms'
 import { setUpTokenBag } from '../../../helpers/setupTokenBag'
@@ -24,7 +23,6 @@ export function MainPage() {
   const playerCount = useRecoilValue(currentPlayersNumber)
   const ancientOne = useRecoilValue(currentAncientOne)
   const setStage = useSetRecoilState(currentStage)
-  const { openModal } = useRecoilValue(openModalSceneAtom)
 
   const [isContinueDisabled, setIsContinueDisabled] = useState(true)
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false)

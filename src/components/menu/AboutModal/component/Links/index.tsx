@@ -35,15 +35,6 @@ export function ArkhamHorrorLink() {
   )
 }
 
-export function AppLink() {
-  return (
-    <AboutLink
-      href="https://eldritch-horror-chaos-bag.netlify.app"
-      text="https://eldritch-horror-chaos-bag.netlify.app"
-    />
-  )
-}
-
 export function FGGLink() {
   return <AboutLink href="fantasyflightgames.com" text="FFG" />
 }

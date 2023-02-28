@@ -8,13 +8,18 @@ export function ModalComponent({
   component,
   width,
   height,
-  applySizeForMobile
+  applySizeForMobile,
+  renderBackground = true
 }: ModalComponentProps) {
   return (
     <>
       <S.ModalComponentContainerBackground />
       <S.ModalComponentContainer>
-        <S.ModalComponent width={width} height={height} applySizeForMobile={applySizeForMobile}>
+        <S.ModalComponent
+          width={width}
+          height={height}
+          applySizeForMobile={applySizeForMobile}
+          renderBackground={renderBackground}>
           <S.ModalComponentContent>{component}</S.ModalComponentContent>
           <IconButton
             sx={{ position: 'absolute', top: '0px', right: '0px' }}

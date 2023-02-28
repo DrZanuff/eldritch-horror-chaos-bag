@@ -6,4 +6,5 @@ export interface ModalComponentProps {
   width?: string
   height?: string
   applySizeForMobile?: boolean
+  renderBackground?: boolean
 }

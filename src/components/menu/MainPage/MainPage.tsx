@@ -28,6 +28,7 @@ export function MainPage() {
 
   const [isContinueDisabled, setIsContinueDisabled] = useState(true)
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false)
+  const [displayAboutModal, setDisplayAboutModal] = useState(false)
 
   const handleCloseConfirmationModal = useCallback(() => {
     setDisplayConfirmationModal(false)
@@ -35,6 +36,14 @@ export function MainPage() {
 
   const handleStartGameButton = useCallback(() => {
     setDisplayConfirmationModal(true)
+  }, [])
+
+  const handleCloseAboutModal = useCallback(() => {
+    setDisplayAboutModal(false)
+  }, [])
+
+  const handleDisplayAboutModal = useCallback(() => {
+    setDisplayAboutModal(true)
   }, [])
 
   const handleStartGame = useCallback(() => {
@@ -91,7 +100,7 @@ export function MainPage() {
               width: '100px',
               margin: '0 auto'
             }}
-            onClick={() => openModal(<AboutModal />)}>
+            onClick={handleDisplayAboutModal}>
             About
           </Button>
         </S.ButtonsContainer>
@@ -109,6 +118,15 @@ export function MainPage() {
           width={'350px'}
           height={'180px'}
           applySizeForMobile
+        />
+      )}
+      {displayAboutModal && (
+        <ModalComponent
+          component={<AboutModal />}
+          handleCloseModalComponent={handleCloseAboutModal}
+          renderBackground={false}
+          width={'550px'}
+          height={'650px'}
         />
       )}
     </>

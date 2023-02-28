@@ -45,6 +45,7 @@ interface ModalComponentProps {
   width?: string
   height?: string
   applySizeForMobile?: boolean
+  renderBackground?: boolean
 }
 
 export const ModalComponent = styled.div<ModalComponentProps>`
@@ -55,11 +56,19 @@ export const ModalComponent = styled.div<ModalComponentProps>`
   gap: 20px;
   width: ${({ width }) => (width ? width : '85vw')};
   height: ${({ height }) => (height ? height : '80vh')};
-  background-color: white;
+  background-color: ${({ renderBackground }) => (renderBackground === true ? 'white' : 'none')};
+  /* background-color: none; */
   position: relative;
 
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
+  ${({ renderBackground }) =>
+    renderBackground === true
+      ? css`
+          box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+            0px 1px 3px rgba(0, 0, 0, 0.12);
+        `
+      : null}
+  /* box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12); */
 
   border-radius: 9px;
 

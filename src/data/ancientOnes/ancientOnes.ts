@@ -189,6 +189,27 @@ const abhoth: AncientOneType = {
   ]
 }
 
+const nephrenka: AncientOneType = {
+  name: 'Nephren-Ka',
+  stages: [
+    {
+      green: 0,
+      yellow: 2,
+      blue: 2
+    },
+    {
+      green: 1,
+      yellow: 3,
+      blue: 0
+    },
+    {
+      green: 3,
+      yellow: 4,
+      blue: 0
+    }
+  ]
+}
+
 const hastur: AncientOneType = {
   name: 'Hastur',
   stages: [
@@ -325,6 +346,7 @@ export const ancientOneList: AncientOneType[] = [
   riseOfTheElderThings,
   syzygy,
   abhoth,
+  nephrenka,
   hastur,
   atlachNacha,
   hypnos,

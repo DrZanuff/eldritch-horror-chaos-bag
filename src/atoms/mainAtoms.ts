@@ -71,3 +71,10 @@ export const tokenBagContext = atom<Token[]>({
   key: 'tokenBagContext',
   default: []
 })
+
+export type Languages = 'en' | 'pt'
+
+export const languageContext = atom<Languages>({
+  key: 'languageContext',
+  default: 'pt'
+})

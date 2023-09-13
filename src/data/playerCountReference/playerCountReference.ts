@@ -2,6 +2,7 @@ import { PlayerCountReference } from './playerCountReference.types'
 
 const onePlayer: PlayerCountReference = {
   name: 'One',
+  id: 'one',
   players: 1,
   portals: 1,
   clues: 1,
@@ -10,6 +11,7 @@ const onePlayer: PlayerCountReference = {
 
 const twoPlayers: PlayerCountReference = {
   name: 'Two',
+  id: 'two',
   players: 2,
   portals: 1,
   clues: 1,
@@ -18,6 +20,7 @@ const twoPlayers: PlayerCountReference = {
 
 const threePlayers: PlayerCountReference = {
   name: 'Three',
+  id: 'three',
   players: 3,
   portals: 1,
   clues: 2,
@@ -26,6 +29,7 @@ const threePlayers: PlayerCountReference = {
 
 const fourPlayers: PlayerCountReference = {
   name: 'Four',
+  id: 'four',
   players: 4,
   portals: 1,
   clues: 2,
@@ -34,6 +38,7 @@ const fourPlayers: PlayerCountReference = {
 
 const fivePlayers: PlayerCountReference = {
   name: 'Five',
+  id: 'five',
   players: 5,
   portals: 2,
   clues: 3,
@@ -42,6 +47,7 @@ const fivePlayers: PlayerCountReference = {
 
 const sixPlayers: PlayerCountReference = {
   name: 'Six',
+  id: 'six',
   players: 6,
   portals: 2,
   clues: 3,
@@ -50,6 +56,7 @@ const sixPlayers: PlayerCountReference = {
 
 const sevenPlayers: PlayerCountReference = {
   name: 'Seven',
+  id: 'seven',
   players: 7,
   portals: 2,
   clues: 4,
@@ -58,6 +65,7 @@ const sevenPlayers: PlayerCountReference = {
 
 const eightPlayers: PlayerCountReference = {
   name: 'Eight',
+  id: 'eight',
   players: 8,
   portals: 2,
   clues: 4,

@@ -17,13 +17,13 @@ export function ThreadLink() {
   return (
     <AboutLink
       href="https://boardgamegeek.com/thread/2890913/mythos-phase-chaos-bag-variant"
-      text="thread"
+      text="Thread"
     />
   )
 }
 
 export function PDFLink() {
-  return <AboutLink href="/rules.pdf" text="link" />
+  return <AboutLink href="/rules.pdf" text="PDF" />
 }
 
 export function ArkhamHorrorLink() {

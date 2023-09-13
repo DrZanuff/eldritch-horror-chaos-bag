@@ -2,6 +2,7 @@ import { AncientOneType } from './ancientOnes.types'
 
 const azathoth: AncientOneType = {
   name: 'Azathoth',
+  id: 'azathoth',
   stages: [
     {
       green: 1,
@@ -23,6 +24,7 @@ const azathoth: AncientOneType = {
 
 const cthulhu: AncientOneType = {
   name: 'Cthulhu',
+  id: 'cthulhu',
   stages: [
     {
       green: 0,
@@ -44,6 +46,7 @@ const cthulhu: AncientOneType = {
 
 const shubNiggurath: AncientOneType = {
   name: 'Shub-Niggurath',
+  id: 'shub_niggurath',
   stages: [
     {
       green: 1,
@@ -65,6 +68,7 @@ const shubNiggurath: AncientOneType = {
 
 const yogSothoth: AncientOneType = {
   name: 'Yog-Sothoth',
+  id: 'yog_sothot',
   stages: [
     {
       green: 0,
@@ -86,6 +90,7 @@ const yogSothoth: AncientOneType = {
 
 const yig: AncientOneType = {
   name: 'Yig',
+  id: 'yig',
   stages: [
     {
       green: 1,
@@ -107,6 +112,7 @@ const yig: AncientOneType = {
 
 const tthaqua: AncientOneType = {
   name: 'Ithaqua',
+  id: 'ithaqua',
   stages: [
     {
       green: 0,
@@ -128,6 +134,7 @@ const tthaqua: AncientOneType = {
 
 const riseOfTheElderThings: AncientOneType = {
   name: 'Rise of the Elder Things',
+  id: 'elder_things',
   stages: [
     {
       green: 2,
@@ -149,6 +156,7 @@ const riseOfTheElderThings: AncientOneType = {
 
 const syzygy: AncientOneType = {
   name: 'Syzygy',
+  id: 'syzygy',
   stages: [
     {
       green: 0,
@@ -170,6 +178,7 @@ const syzygy: AncientOneType = {
 
 const abhoth: AncientOneType = {
   name: 'Abhoth',
+  id: 'abhoth',
   stages: [
     {
       green: 1,
@@ -191,6 +200,7 @@ const abhoth: AncientOneType = {
 
 const nephrenka: AncientOneType = {
   name: 'Nephren-Ka',
+  id: 'nephren_ka',
   stages: [
     {
       green: 0,
@@ -212,6 +222,7 @@ const nephrenka: AncientOneType = {
 
 const hastur: AncientOneType = {
   name: 'Hastur',
+  id: 'hastur',
   stages: [
     {
       green: 0,
@@ -233,6 +244,7 @@ const hastur: AncientOneType = {
 
 const atlachNacha: AncientOneType = {
   name: 'Atlach-Nacha',
+  id: 'atlach_nacha',
   stages: [
     {
       green: 1,
@@ -254,6 +266,7 @@ const atlachNacha: AncientOneType = {
 
 const hypnos: AncientOneType = {
   name: 'Hypnos',
+  id: 'hypnos',
   stages: [
     {
       green: 0,
@@ -275,6 +288,7 @@ const hypnos: AncientOneType = {
 
 const shuddeMell: AncientOneType = {
   name: "Shudde M'ell",
+  id: 'shudde_mell',
   stages: [
     {
       green: 0,
@@ -296,6 +310,7 @@ const shuddeMell: AncientOneType = {
 
 const antediluvium: AncientOneType = {
   name: 'Antediluvium',
+  id: 'antediluvium',
   stages: [
     {
       green: 0,
@@ -317,6 +332,7 @@ const antediluvium: AncientOneType = {
 
 const nyarlathotep: AncientOneType = {
   name: 'Nyarlathotep',
+  id: 'nyarlathotep',
   stages: [
     {
       green: 0,

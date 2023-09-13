@@ -10,7 +10,7 @@ export type TokenNames =
   | 'Blue Mythos'
   | 'Empty Bag'
 
-type TokenIds =
+type TokenDescriptionIds =
   | 'omen_description'
   | 'clue_description'
   | 'gate_description'
@@ -21,8 +21,22 @@ type TokenIds =
   | 'green_mythos_description'
   | 'blue_mythos_description'
   | 'empty_bag_description'
+
+type TokenIds =
+  | 'omen'
+  | 'clue'
+  | 'gate'
+  | 'surge'
+  | 'game_reckoning'
+  | 'player_reckoning'
+  | 'yellow_mythos'
+  | 'green_mythos'
+  | 'blue_mythos'
+  | 'empty_bag'
+
 export interface Token {
   name: TokenNames
   icon: string
+  descriptionId: TokenDescriptionIds
   id: TokenIds
 }

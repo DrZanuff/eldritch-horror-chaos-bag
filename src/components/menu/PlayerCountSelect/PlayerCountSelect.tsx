@@ -2,17 +2,21 @@ import { playerCountReferenceList } from '../../../data/playerCountReference/pla
 import { FormControl, Select, InputLabel, MenuItem } from '@mui/material'
 import { currentPlayersNumber } from '../../../atoms/mainAtoms'
 import { useRecoilState } from 'recoil'
+import { useIntl } from 'react-intl'
 import type { SelectChangeEvent } from './PlayerCountSelect.types'
 import * as S from './PlayerCountSelect.styles'
 
 export function PlayerCountSelect() {
-  const label = 'Select Number of Players'
+  const { formatMessage } = useIntl()
+  const label = formatMessage({ id: 'select_players' })
 
   const [playerCount, setPlayerCount] = useRecoilState(currentPlayersNumber)
 
   const handlePlayerCountChange = (event: SelectChangeEvent) => {
     const players = playerCountReferenceList.find((count) => count.name == event.target.value)
-    setPlayerCount(players || { name: '', clues: 0, players: 0, portals: 0, surges: 0 })
+    setPlayerCount(
+      players || { name: '', id: 'empty', clues: 0, players: 0, portals: 0, surges: 0 }
+    )
   }
 
   return (
@@ -22,12 +26,13 @@ export function PlayerCountSelect() {
         <Select
           labelId="select-players"
           id="select-players"
+          size="small"
           label={label}
           value={playerCount.name}
           onChange={handlePlayerCountChange}>
           {playerCountReferenceList.map((count) => (
             <MenuItem key={count.name} value={count.name}>
-              {count.name}
+              {formatMessage({ id: count.id })}
             </MenuItem>
           ))}
         </Select>

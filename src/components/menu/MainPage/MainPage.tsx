@@ -16,6 +16,7 @@ import { Confirmation } from '../Confirmation'
 import { AboutModal } from '../AboutModal'
 import * as S from './MainPage.styles'
 import { ModalComponent } from '../../_modal/ModalComponent'
+import { useIntl } from 'react-intl'
 
 export function MainPage() {
   const chanteToGamePage = useSetRecoilState(gameState)
@@ -23,6 +24,8 @@ export function MainPage() {
   const playerCount = useRecoilValue(currentPlayersNumber)
   const ancientOne = useRecoilValue(currentAncientOne)
   const setStage = useSetRecoilState(currentStage)
+
+  const { formatMessage } = useIntl()
 
   const [isContinueDisabled, setIsContinueDisabled] = useState(true)
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false)
@@ -81,14 +84,14 @@ export function MainPage() {
             color="error"
             disabled={isSetUpNotReady}
             onClick={handleStartGameButton}>
-            Start New Game
+            {formatMessage({ id: 'new_game' })}
           </Button>
           <Button
             variant="contained"
             color="secondary"
             disabled={isContinueDisabled}
             onClick={handleContinueGame}>
-            Continue
+            {formatMessage({ id: 'continue' })}
           </Button>
 
           <Button
@@ -99,7 +102,7 @@ export function MainPage() {
               margin: '0 auto'
             }}
             onClick={handleDisplayAboutModal}>
-            About
+            {formatMessage({ id: 'about' })}
           </Button>
         </S.ButtonsContainer>
         <About />

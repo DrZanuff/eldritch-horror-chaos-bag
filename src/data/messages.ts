@@ -1,6 +1,18 @@
+import { aboutMessages } from './aboutMessages'
+
 export const messages = {
-  en: {
+  us: {
     empty: '',
+    omen: 'Omen',
+    clue: 'Clue',
+    gate: 'Gate',
+    surge: 'Surge',
+    game_reckoning: 'Game Reckoning',
+    player_reckoning: 'Player Reckoning',
+    yellow_mythos: 'Yellow Mythos',
+    green_mythos: 'Green Mythos',
+    blue_mythos: 'Blue Mythos',
+    empty_bag: 'Empty Bag',
     omen_description: `<span id="omen_description">Advance Omen by one (1)</span>`,
     clue_description: `
       <span id="clue_description">
@@ -39,7 +51,7 @@ export const messages = {
       <span id="player_reckoning_description">
         The player with the Lead investigator token resolves Reckoning for all
         their player elements <i>(Possessions and Conditions)</i> then they pass the
-        token to the <i>(first non_Eliminated)</i> player on the left
+        token to the <i>(first non-Eliminated)</i> player on the left
       </span>
     `,
     yellow_mythos_description: `
@@ -67,10 +79,65 @@ export const messages = {
       <span id="empty_bag_description">
         The bag is empty, advance the omen by one(1)
       </span>
-    `
+    `,
+    one: 'One',
+    two: 'Two',
+    three: 'Three',
+    four: 'Four',
+    five: 'Five',
+    six: 'Six',
+    seven: 'Seven',
+    eight: 'Eight',
+    azathoth: 'Azathoth',
+    cthulhu: 'Cthulhu',
+    shub_niggurath: 'Shub-Niggurath',
+    yog_sothot: 'Yog-Sothoth',
+    yig: 'Yig',
+    ithaqua: 'Ithaqua',
+    elder_things: 'Rise of the Elder Things',
+    syzygy: 'Syzygy',
+    abhoth: 'Abhoth',
+    nephren_ka: 'Nephren-Ka',
+    hastur: 'Hastur',
+    atlach_nacha: 'Atlach-Nacha',
+    hypnos: 'Hypnos',
+    shudde_mell: `Shudde M'ell`,
+    antediluvium: 'Antediluvium',
+    nyarlathotep: 'Nyarlathotep',
+    new_game: 'New Game',
+    continue: 'Continue',
+    about: 'About',
+    select_ao: 'Select an Ancient One',
+    select_players: 'Select Number of Players',
+    how_to_play: 'How to play',
+    select_language: 'Select a Language',
+    us: 'English',
+    br: 'Portuguese',
+    stage: 'Stage',
+    overwrite_warning_1: 'This will overwrite previous save game.',
+    overwrite_warning_2: 'Do you want to proceed?',
+    yes: 'Yes',
+    no: 'No',
+    back_to_menu: 'Back to Menu',
+    get_token: 'Get Token',
+    reset_token: 'Reset Token Bag',
+    endless_stage: 'Endless Stage!',
+    description_header: 'DESCRIPTION',
+    tokens_taken: 'TOKENS TAKEN',
+    ...aboutMessages.en
   },
-  pt: {
+  br: {
     empty: '',
+    omen: 'Presságio',
+    clue: 'Pista',
+    gate: 'Portal',
+    surge: 'Invasão',
+    game_reckoning: 'Acerto de Contas do Jogo',
+    player_reckoning: 'Acerto de Contas do Jogador',
+    yellow_mythos: 'Mito Amarelo',
+    green_mythos: 'Mito Verde',
+    blue_mythos: 'Mito Azul',
+    empty_bag: 'Saco Vazio',
     omen_description: '<span id="omen_description">Avance o Presságio em um (1)</span>',
     clue_description: `
       <span id="clue_description">
@@ -138,6 +205,51 @@ export const messages = {
       <span id="empty_bag_description">
         O saco está vazio, avance o Presságio em um (1)
       </span>
-    `
+    `,
+    one: 'Um',
+    two: 'Dois',
+    three: 'Três',
+    four: 'Quatro',
+    five: 'Cinco',
+    six: 'Seis',
+    seven: 'Sete',
+    eight: 'Oito',
+    azathoth: 'Azathoth',
+    cthulhu: 'Cthulhu',
+    shub_niggurath: 'Shub-Niggurath',
+    yog_sothot: 'Yog-Sothoth',
+    yig: 'Yig',
+    ithaqua: 'Ithaqua',
+    elder_things: 'Ascensão das Criaturas Ancestrais',
+    syzygy: 'Syzygy',
+    abhoth: 'Abhoth',
+    nephren_ka: 'Nephren-Ka',
+    hastur: 'Hastur',
+    atlach_nacha: 'Atlach-Nacha',
+    hypnos: 'Hypnos',
+    shudde_mell: `Shudde M'ell`,
+    antediluvium: 'Antedilúvio',
+    nyarlathotep: 'Nyarlathotep',
+    new_game: 'Novo Jogo',
+    continue: 'Continuar',
+    about: 'Sobre',
+    select_ao: 'Selecione um Ancião',
+    select_players: 'Selecione o Número de Jogadores',
+    how_to_play: 'Como Jogar',
+    select_language: 'Selecione a Linguagem',
+    us: 'Inglês',
+    br: 'Português',
+    stage: 'Etapa',
+    overwrite_warning_1: 'Isto irá sobrescrever o jogo salvo anterior.',
+    overwrite_warning_2: 'Deseja prosseguir?',
+    yes: 'Sim',
+    no: 'Não',
+    back_to_menu: 'Voltar ao Menu',
+    get_token: 'Obter Ficha',
+    reset_token: 'Reiniciar Fichas',
+    endless_stage: 'Etapa Infindável!',
+    description_header: 'DESCRIÇÃO',
+    tokens_taken: 'FICHAS RETIRADAS',
+    ...aboutMessages.br
   }
 }

@@ -19,7 +19,7 @@ export const TokenTitle = styled.div`
   align-items: center;
 
   > h2 {
-    font-size: 20px;
+    font-size: 16px;
     margin: 0 0 10px;
     font-family: 'Birmingham';
     font-weight: bold;

@@ -6,5 +6,6 @@ export interface StagesType {
 
 export interface AncientOneType {
   name: string
+  id: string
   stages: StagesType[]
 }

@@ -54,6 +54,7 @@ export const currentPlayersNumber = atom<PlayerCountReference>({
   default: {
     clues: 0,
     name: 'none',
+    id: 'empty',
     players: 0,
     portals: 0,
     surges: 0
@@ -72,9 +73,9 @@ export const tokenBagContext = atom<Token[]>({
   default: []
 })
 
-export type Languages = 'en' | 'pt'
+export type Languages = 'us' | 'br'
 
 export const languageContext = atom<Languages>({
   key: 'languageContext',
-  default: 'pt'
+  default: 'br'
 })

@@ -7,6 +7,7 @@ export const ConfirmationContainer = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
+  text-align: center;
   /* gap: 15px; */
 
   h3 {

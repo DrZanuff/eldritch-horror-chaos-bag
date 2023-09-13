@@ -19,6 +19,7 @@ import { resetToken } from '../../../data/tokens/tokens'
 import type { Token } from './GamePage.types'
 import * as S from './GamePage.styles'
 import { TokenDescription } from '../TokenDescription'
+import { useIntl } from 'react-intl'
 
 export function GamePage() {
   const changePageToMenu = useSetRecoilState(gameState)
@@ -26,6 +27,8 @@ export function GamePage() {
   const [tokenBag, setTokenBag] = useRecoilState(tokenBagContext)
   const [ancientOne, setAncientOne] = useRecoilState(currentAncientOne)
   const [playerCount, setPlayerCount] = useRecoilState(currentPlayersNumber)
+
+  const { formatMessage } = useIntl()
 
   const [tokensTaken, setTokensTaken] = useState<Token[]>([])
   const [lastToken, setLastToken] = useState<Token>({} as Token)
@@ -85,7 +88,7 @@ export function GamePage() {
     <S.GamePageContainer data-testid="game-page">
       <S.TopContainer>
         <Button variant="contained" color="error" onClick={handleBackToMenu}>
-          Back to Menu
+          {formatMessage({ id: 'back_to_menu' })}
         </Button>
       </S.TopContainer>
       <S.Row>
@@ -97,7 +100,7 @@ export function GamePage() {
               size="large"
               endIcon={<TouchApp fontSize={'large'} />}
               sx={{ width: '70%' }}>
-              Get Token
+              {formatMessage({ id: 'get_token' })}
             </Button>
           ) : (
             <Button
@@ -107,7 +110,7 @@ export function GamePage() {
               size="large"
               endIcon={<RestartAlt fontSize={'large'} />}
               sx={{ width: '80%' }}>
-              Reset Token Bag
+              {formatMessage({ id: 'reset_token' })}
             </Button>
           )}
         </S.ButtonWraper>
@@ -119,7 +122,7 @@ export function GamePage() {
               currentStage={stage}
             />
           ) : (
-            <span>Endless Stage!</span>
+            <span>{formatMessage({ id: 'endless_stage' })}</span>
           )}
         </S.StageBox>
       </S.Row>

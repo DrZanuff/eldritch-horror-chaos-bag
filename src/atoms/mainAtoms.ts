@@ -77,5 +77,5 @@ export type Languages = 'us' | 'br'
 
 export const languageContext = atom<Languages>({
   key: 'languageContext',
-  default: 'br'
+  default: 'us'
 })

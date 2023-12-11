@@ -12,6 +12,7 @@ export const Background = styled.div`
   z-index: -1;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -25,6 +26,7 @@ export const Background = styled.div`
     img {
       width: 100%;
       height: 100vh;
+      height: 100svh;
     }
   }
 `

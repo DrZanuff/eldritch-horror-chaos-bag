@@ -5,6 +5,7 @@
   text-align: center; */
   width: 100%;
   height: 100vh;
+  height: 100svh;
 }
 
 /* @media (max-width: 1024px) {

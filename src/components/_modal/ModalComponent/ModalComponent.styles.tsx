@@ -19,6 +19,7 @@ export const ModalComponentContainer = styled.div`
   position: absolute;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
   top: 0;
   left: 0;
 
@@ -29,7 +30,7 @@ export const ModalComponentContainer = styled.div`
 export const ModalComponentContainerBackground = styled.div`
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   top: 0;
   left: 0;
   right: 0;

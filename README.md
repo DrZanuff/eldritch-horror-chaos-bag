@@ -40,3 +40,9 @@ To run the project locally, clone the repo and install the dependencies using `n
 ```
 npm run dev
 ```
+
+To run cypress enviroment and run tests:
+
+```
+npm run cy:open
+```

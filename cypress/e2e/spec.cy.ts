@@ -48,6 +48,6 @@ describe('Start Game', () => {
 
     cy.contains('Get Token').click()
 
-    cy.get('.tokens-taken > div').children().should('have.length', 1)
+    cy.get('[data-testid="tokens-taken"] > div').children().should('have.length', 1)
   })
 })

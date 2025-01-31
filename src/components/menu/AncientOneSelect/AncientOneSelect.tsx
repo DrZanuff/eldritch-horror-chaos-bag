@@ -27,7 +27,7 @@ export function AncientOneSelect() {
           <InputLabel id="select-ao">{label}</InputLabel>
           <Select
             labelId="select-ao"
-            id="select-ao"
+            id="select-ao-input"
             size="small"
             label={label}
             sx={{ width: '100%' }}

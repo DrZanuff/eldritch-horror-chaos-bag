@@ -25,7 +25,7 @@ export function PlayerCountSelect() {
         <InputLabel id="select-players">{label}</InputLabel>
         <Select
           labelId="select-players"
-          id="select-players"
+          id="select-players-input"
           size="small"
           label={label}
           value={playerCount.name}
